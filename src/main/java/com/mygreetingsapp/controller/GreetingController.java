@@ -63,6 +63,11 @@ public class GreetingController {
         // returning the updated greeting status
         return ResponseEntity.ok(updatedGreeting);
     }
-
+    // UC08-Deleting the greeting message by id
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteGreeting(@PathVariable Long id) {
+        greetingService.deleteGreeting(id);
+        return ResponseEntity.ok("Greeting with ID " + id + " has been deleted.");
+    }
 
 }
