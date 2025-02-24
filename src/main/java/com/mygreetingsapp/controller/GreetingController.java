@@ -29,5 +29,10 @@ public class GreetingController {
         return greetingService.getGreetingById(Id);
     }
 
+    // UC02-Simple Greeting message ”Hello World”
+    @GetMapping("/")
+    public String getGreeting(){
+        return "Hello World";
+    }
 
 }
