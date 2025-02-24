@@ -44,5 +44,10 @@ public class GreetingController {
     public GreetingResponse createGreeting(@RequestBody GreetingRequest request) {
         return greetingService.generateAndSaveGreeting(request);
     }
+    //UC05- Created a method to get all messages using id
+    @GetMapping("/{id}")
+    public ResponseEntity<GreetingMessage> getAllGreetingById(@PathVariable Long id) {
+        return ResponseEntity.ok(greetingService.getGreetingById(id));
+    }
 
 }
