@@ -39,5 +39,10 @@ public class GreetingController {
     public String getGreetingWithName(@PathVariable String name){
         return ("Hello"+name);
     }
+    //UC04- Create and Save Greeting
+    @PostMapping
+    public GreetingResponse createGreeting(@RequestBody GreetingRequest request) {
+        return greetingService.generateAndSaveGreeting(request);
+    }
 
 }
