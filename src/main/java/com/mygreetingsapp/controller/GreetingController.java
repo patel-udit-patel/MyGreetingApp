@@ -49,5 +49,11 @@ public class GreetingController {
     public ResponseEntity<GreetingMessage> getAllGreetingById(@PathVariable Long id) {
         return ResponseEntity.ok(greetingService.getGreetingById(id));
     }
+    // UC06-Fetch All Saved Greetings
+    @GetMapping("/all")
+    public List<GreetingMessage> getAllGreetings() {
+        return greetingService.getAllGreetings();
+    }
+
 
 }
