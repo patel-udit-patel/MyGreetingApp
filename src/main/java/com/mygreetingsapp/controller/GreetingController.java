@@ -34,5 +34,10 @@ public class GreetingController {
     public String getGreeting(){
         return "Hello World";
     }
+    //UC03-Ability for the Greeting App to give Greeting message with
+    @GetMapping("/{name}")
+    public String getGreetingWithName(@PathVariable String name){
+        return ("Hello"+name);
+    }
 
 }
